@@ -1,0 +1,81 @@
+#include <iostream>
+#include <iomanip>
+#include <time.h>
+#include <fstream>
+
+using namespace std;
+
+bool Game_Over = 0;
+const int Width_Of_The_Game_Field = 20;
+const int Height_Of_The_Game_Field = 20;
+int x_Spaceship, y_Spaceship;
+int x_Enemy_Spaceship, y_Enemy_Spaceship;
+enum Game_Direction{STOP=0,LEFT,RIGHT,UP,DOWN};
+Game_Direction dirol;
+int Score_Of_The_Player;
+
+
+void Setup_Of_The_Game()
+{
+	Game_Over = false;
+	dirol = STOP;
+	x_Spaceship = Width_Of_The_Game_Field - 95;
+	y_Spaceship = Height_Of_The_Game_Field / 2;
+	x_Enemy_Spaceship = Width_Of_The_Game_Field - 1;
+	y_Enemy_Spaceship = rand() % Height_Of_The_Game_Field;
+	Score_Of_The_Player = 0;
+
+
+}
+
+void Print_Game_Field()
+{
+	system("cls");
+	for (int i = 0; i < Width_Of_The_Game_Field; i++)
+		cout << '#';
+	cout << endl;
+
+	for (int i = 0; i < Width_Of_The_Game_Field; i++)
+	{
+		for (int j = 0; j < Height_Of_The_Game_Field; j++)
+		{
+			if (j == 0 || j == Width_Of_The_Game_Field - 1)
+				cout << '#';
+			cout << " ";
+		}
+		cout << endl;
+	}
+
+	for (int i = 0; i < Height_Of_The_Game_Field; i++)
+		cout << '#';
+	cout << endl;
+
+}
+
+void Input_The_Move()
+{
+
+
+}
+
+void Logic_Of_The_Game()
+{
+
+
+
+}
+
+
+int main()
+{
+	Setup_Of_The_Game();
+	while (!Game_Over)
+	{
+		Print_Game_Field();
+		Input_The_Move();
+		Logic_Of_The_Game();
+	}
+
+
+	system("pause");
+}
